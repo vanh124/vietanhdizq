@@ -1,0 +1,25 @@
+function upDate(previewPic) {
+    /* 1. Lấy thuộc tính src và alt từ tham số previewPic */
+    var src = previewPic.src;
+    var alt = previewPic.alt;
+
+    /* 2. Truy cập phần tử có id là "image" */
+    var imageDiv = document.getElementById("image");
+
+    /* 3. Thay đổi nội dung văn bản thành alt của ảnh đang trỏ chuột */
+    imageDiv.innerHTML = alt;
+
+    /* 4. Thay đổi ảnh nền thành src của ảnh đang trỏ chuột */
+    imageDiv.style.backgroundImage = "url('" + src + "')";
+}
+
+function unDo() {
+    /* 1. Truy cập phần tử có id là "image" */
+    var imageDiv = document.getElementById("image");
+
+    /* 2. Khôi phục lại ảnh nền về trạng thái ban đầu (rỗng) */
+    imageDiv.style.backgroundImage = "url('')";
+
+    /* 3. Khôi phục lại nội dung văn bản ban đầu */
+    imageDiv.innerHTML = "Hover over an image below to display here.";
+}
